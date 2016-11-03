@@ -10,13 +10,13 @@
 		64A4AE801DCA55DB00A464F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64A4AE7F1DCA55DB00A464F2 /* Assets.xcassets */; };
 		64A4AE831DCA55DB00A464F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64A4AE811DCA55DB00A464F2 /* LaunchScreen.storyboard */; };
 		64A4AE8E1DCA561600A464F2 /* CardControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4AE8B1DCA561600A464F2 /* CardControllerDelegate.swift */; };
-		64A4AE8F1DCA561600A464F2 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4AE8C1DCA561600A464F2 /* MenuButton.swift */; };
+		64A4AE8F1DCA561600A464F2 /* CardMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4AE8C1DCA561600A464F2 /* CardMenuButton.swift */; };
 		64A4AE901DCA561600A464F2 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4AE8D1DCA561600A464F2 /* CardController.swift */; };
 		64A4AE981DCA562100A464F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4AE911DCA562100A464F2 /* AppDelegate.swift */; };
-		64A4AE991DCA562100A464F2 /* A.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4AE921DCA562100A464F2 /* A.swift */; };
-		64A4AE9A1DCA562100A464F2 /* B.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4AE931DCA562100A464F2 /* B.swift */; };
-		64A4AE9B1DCA562100A464F2 /* C.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4AE941DCA562100A464F2 /* C.swift */; };
-		64A4AE9C1DCA562100A464F2 /* D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4AE951DCA562100A464F2 /* D.swift */; };
+		64A4AE991DCA562100A464F2 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4AE921DCA562100A464F2 /* Contact.swift */; };
+		64A4AE9A1DCA562100A464F2 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4AE931DCA562100A464F2 /* About.swift */; };
+		64A4AE9B1DCA562100A464F2 /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4AE941DCA562100A464F2 /* Work.swift */; };
+		64A4AE9C1DCA562100A464F2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4AE951DCA562100A464F2 /* Home.swift */; };
 		64A4AE9D1DCA562100A464F2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4AE961DCA562100A464F2 /* BaseViewController.swift */; };
 		64A4AE9E1DCA562100A464F2 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4AE971DCA562100A464F2 /* Card.swift */; };
 /* End PBXBuildFile section */
@@ -27,13 +27,13 @@
 		64A4AE821DCA55DB00A464F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64A4AE841DCA55DB00A464F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64A4AE8B1DCA561600A464F2 /* CardControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardControllerDelegate.swift; path = Source/CardControllerDelegate.swift; sourceTree = "<group>"; };
-		64A4AE8C1DCA561600A464F2 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuButton.swift; path = Source/MenuButton.swift; sourceTree = "<group>"; };
+		64A4AE8C1DCA561600A464F2 /* CardMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardMenuButton.swift; path = Source/CardMenuButton.swift; sourceTree = "<group>"; };
 		64A4AE8D1DCA561600A464F2 /* CardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardController.swift; path = Source/CardController.swift; sourceTree = "<group>"; };
 		64A4AE911DCA562100A464F2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = "<group>"; };
-		64A4AE921DCA562100A464F2 /* A.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = A.swift; path = Example/A.swift; sourceTree = "<group>"; };
-		64A4AE931DCA562100A464F2 /* B.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = B.swift; path = Example/B.swift; sourceTree = "<group>"; };
-		64A4AE941DCA562100A464F2 /* C.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = C.swift; path = Example/C.swift; sourceTree = "<group>"; };
-		64A4AE951DCA562100A464F2 /* D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = D.swift; path = Example/D.swift; sourceTree = "<group>"; };
+		64A4AE921DCA562100A464F2 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = Example/Contact.swift; sourceTree = "<group>"; };
+		64A4AE931DCA562100A464F2 /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = About.swift; path = Example/About.swift; sourceTree = "<group>"; };
+		64A4AE941DCA562100A464F2 /* Work.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Work.swift; path = Example/Work.swift; sourceTree = "<group>"; };
+		64A4AE951DCA562100A464F2 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Home.swift; path = Example/Home.swift; sourceTree = "<group>"; };
 		64A4AE961DCA562100A464F2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Example/BaseViewController.swift; sourceTree = "<group>"; };
 		64A4AE971DCA562100A464F2 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = Example/Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,11 +69,11 @@
 			isa = PBXGroup;
 			children = (
 				64A4AE911DCA562100A464F2 /* AppDelegate.swift */,
-				64A4AE921DCA562100A464F2 /* A.swift */,
-				64A4AE931DCA562100A464F2 /* B.swift */,
-				64A4AE941DCA562100A464F2 /* C.swift */,
-				64A4AE951DCA562100A464F2 /* D.swift */,
 				64A4AE961DCA562100A464F2 /* BaseViewController.swift */,
+				64A4AE921DCA562100A464F2 /* Contact.swift */,
+				64A4AE931DCA562100A464F2 /* About.swift */,
+				64A4AE941DCA562100A464F2 /* Work.swift */,
+				64A4AE951DCA562100A464F2 /* Home.swift */,
 				64A4AE971DCA562100A464F2 /* Card.swift */,
 				64A4AE8A1DCA560500A464F2 /* Source */,
 				64A4AE7F1DCA55DB00A464F2 /* Assets.xcassets */,
@@ -87,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				64A4AE8B1DCA561600A464F2 /* CardControllerDelegate.swift */,
-				64A4AE8C1DCA561600A464F2 /* MenuButton.swift */,
+				64A4AE8C1DCA561600A464F2 /* CardMenuButton.swift */,
 				64A4AE8D1DCA561600A464F2 /* CardController.swift */,
 			);
 			name = Source;
@@ -166,15 +166,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64A4AE9A1DCA562100A464F2 /* B.swift in Sources */,
+				64A4AE9A1DCA562100A464F2 /* About.swift in Sources */,
 				64A4AE981DCA562100A464F2 /* AppDelegate.swift in Sources */,
-				64A4AE991DCA562100A464F2 /* A.swift in Sources */,
-				64A4AE8F1DCA561600A464F2 /* MenuButton.swift in Sources */,
+				64A4AE991DCA562100A464F2 /* Contact.swift in Sources */,
+				64A4AE8F1DCA561600A464F2 /* CardMenuButton.swift in Sources */,
 				64A4AE901DCA561600A464F2 /* CardController.swift in Sources */,
 				64A4AE9D1DCA562100A464F2 /* BaseViewController.swift in Sources */,
-				64A4AE9B1DCA562100A464F2 /* C.swift in Sources */,
+				64A4AE9B1DCA562100A464F2 /* Work.swift in Sources */,
 				64A4AE9E1DCA562100A464F2 /* Card.swift in Sources */,
-				64A4AE9C1DCA562100A464F2 /* D.swift in Sources */,
+				64A4AE9C1DCA562100A464F2 /* Home.swift in Sources */,
 				64A4AE8E1DCA561600A464F2 /* CardControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

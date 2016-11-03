@@ -25,7 +25,7 @@ fileprivate extension CALayer {
 
 
 
-open class MenuButton : UIButton {
+open class CardMenuButton : UIButton {
     
    private let shortLines: CGPath = {
         let path = CGMutablePath()

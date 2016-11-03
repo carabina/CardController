@@ -8,19 +8,22 @@
 
 import UIKit
 
-class C: Card{
+class Work: Card{
     
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.frame.origin = CGPoint(x: 105, y: 175)
+        view.frame.origin = CGPoint(x: 90, y: 160)
         view.backgroundColor = #colorLiteral(red: 1, green: 0.5803921569, blue: 0.4196078431, alpha: 1)
         
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(C.tap(_:)))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(Work.tap(_:)))
         view.addGestureRecognizer(tapRecognizer)
-
+        
+        cardTitle.text = "Work"
+        cardTitle.textColor = #colorLiteral(red: 0.3882352941, green: 0.2588235294, blue: 0.4196078431, alpha: 1)
+        
     }
     
     

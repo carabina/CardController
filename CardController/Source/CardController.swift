@@ -81,8 +81,8 @@ open class CardController: UIViewController {
     
  
     
-    public lazy private (set) var menuButton: MenuButton = {
-        let button =  MenuButton(frame: CGRect(origin: .zero, size: CGSize(width: 44, height: 44)  ))
+    public lazy private (set) var menuButton: CardMenuButton = {
+        let button =  CardMenuButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(CardController.menuButtonTapped(_:)), for: .touchUpInside)
 
@@ -140,8 +140,9 @@ open class CardController: UIViewController {
     
     override open func updateViewConstraints() {
         let margins = view.layoutMarginsGuide
-        
-        menuButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: 40).isActive = true
+        let statuBarHidden = baseViewController.prefersStatusBarHidden
+        let topInset: CGFloat = statuBarHidden ? 15 : 40
+        menuButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: topInset ).isActive = true
         menuButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 0).isActive = true
         menuButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
         
@@ -151,14 +152,7 @@ open class CardController: UIViewController {
     
  
     // Returning false lets UIKit know that this container view controller notifies its children of changes in its appearance
-    override open var shouldAutomaticallyForwardAppearanceMethods: Bool{
-        return false
-    }
-    
-    
-    
-
-    
+    override open var shouldAutomaticallyForwardAppearanceMethods: Bool{  return false  }
     
     
     // Delegate the apperance of the status to the carController baseViewController.

@@ -19,13 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         let base = BaseViewController()
     
-        let a = A()
-        let b = B()
-        let c = C()
-        let d = D()
+        let a = Contact()
+        let b = About()
+        let c = Work()
+        let home = Home()
         
         
-        let cardC = CardController(base: base, viewControllers: [ a, b, c, d ])
+        let cardC = CardController(base: base, viewControllers: [ a, b, c, home ])
         cardC.menuButton.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 //        cardC.menuButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         

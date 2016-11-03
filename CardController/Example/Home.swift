@@ -9,20 +9,25 @@
 import UIKit
 
 
-class D: Card{
+class Home: Card{
 
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.frame.origin = CGPoint(x: 145, y: 225)
+        view.frame.origin = CGPoint(x: 120, y: 210)
         view.backgroundColor = #colorLiteral(red: 1, green: 0.9019607843, blue: 0.5176470588, alpha: 1)
         
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(D.tap(_:)))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(Home.tap(_:)))
         view.addGestureRecognizer(tapRecognizer)
         
+        cardTitle.text = "Home"
+        cardTitle.textColor = #colorLiteral(red: 0.7098039216, green: 0.3529411765, blue: 0.4196078431, alpha: 1)
+       
     }
+    
+    
     
     
     
@@ -32,6 +37,8 @@ class D: Card{
         cardController?.present(self)
         
     }
+    
+    
     
     
   

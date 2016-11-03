@@ -20,25 +20,11 @@ class BaseViewController: UIViewController {
     }
 
     
-//    override func beginAppearanceTransition(_: Bool, animated: Bool){
-//        print("beguin appearance", self.description )
-//    }
-//    
-//    override func endAppearanceTransition(){
-//        print("end appreacence", self.description)
-//    }
-//    
-//    
-//    
-//    func tap(_ gesture: UIGestureRecognizer){
-//        
-//        cardController?.present(self)
-//        
-//    }
+
    
     
     // Only the base view controller is responsible for the status bar appearance.
-    override var prefersStatusBarHidden: Bool { return false}
+    override var prefersStatusBarHidden: Bool { return true }
 
 
 }// end

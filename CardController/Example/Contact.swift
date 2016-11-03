@@ -8,7 +8,7 @@
 
 import UIKit
 
-class A: Card, CardControllerDelegate{
+class Contact: Card, CardControllerDelegate{
 
 
     
@@ -17,11 +17,15 @@ class A: Card, CardControllerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.frame.origin = CGPoint(x: 30, y: 75)
+        view.frame.origin = CGPoint(x: 30, y: 65)
         view.backgroundColor = #colorLiteral(red: 0.3882352941, green: 0.2588235294, blue: 0.4196078431, alpha: 1)
         
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(A.tap(_:)))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(Contact.tap(_:)))
         view.addGestureRecognizer(tapRecognizer)
+        
+        
+        cardTitle.text = "Contact"
+        cardTitle.textColor = #colorLiteral(red: 1, green: 0.5803921569, blue: 0.4196078431, alpha: 1)
         
     }
     
@@ -52,9 +56,10 @@ class A: Card, CardControllerDelegate{
     
     
     
-//    func cardController(_ cardController: CardController, positionForDismissed viewController: UIViewController) -> CGPoint {
-//        return CGPoint(x:  -100, y: view.frame.origin.y)
-//    }
+    func cardController(_ cardController: CardController, positionForDismissed viewController: UIViewController) -> CGPoint {
+        print("dismissed ",viewController)
+        return CGPoint(x:  view.frame.origin.x, y: 520)
+    }
     
 
 
