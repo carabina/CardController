@@ -1,7 +1,4 @@
 
-//  Created by Manuel Lopes on 02/11/2016.
-//  Copyright © 2016 Manuel Carlos. All rights reserved.
-
 
 import UIKit
 
