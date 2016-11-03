@@ -30,7 +30,7 @@ class BaseViewController: UIViewController {
     override func didMove(toParentViewController parent: UIViewController?) {
         
         cardController?.menuButton.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        cardController?.menuButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+//      cardController?.menuButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         cardController?.isMenuButtonHidden = true
     }
    
@@ -39,7 +39,7 @@ class BaseViewController: UIViewController {
 
     
     // Only the base view controller is responsible for the status bar appearance.
-    override var prefersStatusBarHidden: Bool { return false }
+    override var prefersStatusBarHidden: Bool { return true }
 
 
 }// end

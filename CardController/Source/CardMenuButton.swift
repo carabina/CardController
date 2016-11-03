@@ -1,8 +1,7 @@
 
-//
 //  Created by Manuel Lopes on 29/07/2016.
 //  Copyright © 2016 Manuel Carlos. All rights reserved.
-//
+
 
 import UIKit
 
@@ -43,7 +42,8 @@ open class CardMenuButton : UIButton {
 
     
     
-    override open var tintColor: UIColor! {
+    /// Set the tint color for the button.
+    open override  var tintColor: UIColor! {
         get{ return UIColor(cgColor: top.strokeColor!) }
         set{
             top.strokeColor = newValue.cgColor
@@ -56,6 +56,7 @@ open class CardMenuButton : UIButton {
     
     
     
+    /// Toggle the button animation.
     public var showsMenu: Bool = false {
         didSet {
             let strokeStart = CABasicAnimation(keyPath: "strokeStart")

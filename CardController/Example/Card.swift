@@ -44,7 +44,6 @@ class Card: UIViewController {
         cardTitle.topAnchor.constraint(equalTo: margins.topAnchor, constant: 12).isActive = true
         cardTitle.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 50).isActive = true
         
-        
         super.updateViewConstraints()
     }
     

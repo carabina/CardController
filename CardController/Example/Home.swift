@@ -16,7 +16,7 @@ class Home: Card{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.frame.origin = CGPoint(x: 120, y: 210)
+        view.frame.origin = CGPoint(x: 120, y: 220)
         view.backgroundColor = #colorLiteral(red: 1, green: 0.9019607843, blue: 0.5176470588, alpha: 1)
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(Home.tap(_:)))
@@ -33,14 +33,10 @@ class Home: Card{
     
     
     func tap(_ gesture: UIGestureRecognizer){
-        
         cardController?.present(self)
-        
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
-        
-      
         cardController?.isMenuButtonHidden = false
     }
     

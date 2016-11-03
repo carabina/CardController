@@ -1,19 +1,13 @@
 
-//
-//  AA.swift
-//  Containers
-//
 //  Created by Manuel Lopes on 29/07/2016.
 //  Copyright © 2016 Manuel Carlos. All rights reserved.
-//
+
 
 
 
 
 
 import UIKit
-
-
 
 
 public extension UIViewController{
@@ -99,11 +93,6 @@ open class CardController: UIViewController {
 
     
     
- 
-  
-    
-    
-    
     convenience init(base: UIViewController, viewControllers: [UIViewController] ){
         self.init(nibName: nil, bundle: nil, base: base, viewControllers: viewControllers)
     }
@@ -142,12 +131,7 @@ open class CardController: UIViewController {
         super.viewDidLoad()
     
         addViewControllers()
-        
         addMenuButton()
-        
-        
-     
-        
     }
     
     
@@ -375,10 +359,7 @@ open class CardController: UIViewController {
         if activeVC is CardControllerDelegate{
             activeVC.cardController?.delegate = activeVC as? CardControllerDelegate
         }
-        
         activeVC.didMove(toParentViewController: self)
-       print(activeVC is CardControllerDelegate)
-        
     }
     
     

@@ -17,7 +17,7 @@ class Contact: Card, CardControllerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.frame.origin = CGPoint(x: 30, y: 65)
+        view.frame.origin = CGPoint(x: 30, y: 75)
         view.backgroundColor = #colorLiteral(red: 0.3882352941, green: 0.2588235294, blue: 0.4196078431, alpha: 1)
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(Contact.tap(_:)))

@@ -15,7 +15,7 @@ class Work: Card{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.frame.origin = CGPoint(x: 90, y: 160)
+        view.frame.origin = CGPoint(x: 90, y: 170)
         view.backgroundColor = #colorLiteral(red: 1, green: 0.5803921569, blue: 0.4196078431, alpha: 1)
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(Work.tap(_:)))
@@ -32,21 +32,12 @@ class Work: Card{
     func tap(_ gesture: UIGestureRecognizer){
         
         cardController?.present(self)
-
     }
 
-    
-//    
-//    override func beginAppearanceTransition(_: Bool, animated: Bool){
-//        print("beguin appearance", self.description )
-//    }
-//    
-//    override func endAppearanceTransition(){
-//        print("end appreacence", self.description)
-//    }
+
     
     
     
     
-}
+}//end
 

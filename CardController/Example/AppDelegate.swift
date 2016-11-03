@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
-        
         window = UIWindow(frame: UIScreen.main.bounds)
         let base = BaseViewController()
     
@@ -23,11 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let b = About()
         let c = Work()
         let home = Home()
-        
-        
-        let cardC = CardController(base: base, viewControllers: [ a, b, c, home ])
-        
 
+        let cardC = CardController(base: base, viewControllers: [ a, b, c, home ])
         
         window?.rootViewController = cardC
         window?.makeKeyAndVisible()
