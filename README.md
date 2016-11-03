@@ -18,10 +18,7 @@
 ### Manually
 Please add the CardControllerSource folder to your project.
 
-- (CocoaPods support coming soon)
-
-### API
-
+(CocoaPods support coming soon)
 
 
 
@@ -69,10 +66,12 @@ override func didMove(toParentViewController parent: UIViewController?) {
 }
 ```
 
-#### System Status Bar
+#### Customize the System Status Bar
 
 **Important:** Always and only use your **base view controller** to modify the status bar appearance.
 
+
+## API
 
 #### Public Properties
 
@@ -102,7 +101,8 @@ optional func cardController(_ cardController: CardController, animatorFor viewC
 ```
 Conforming to CardControllerDelegate lets you fine tune the position the animations for each view controller's view.
 
-- Try out the demo app. ( screenshot bellow )
+----
+Try out the demo app. ( screenshot bellow )
 
 
 
