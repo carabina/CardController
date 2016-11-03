@@ -90,6 +90,8 @@ public var isMenuButtonHidden: Bool = false {get set}
 
 #### CardControllerDelegate
 
+Conforming to CardControllerDelegate lets you fine tune the position the animations for each view controller's view.
+
 ```swift
 optional func cardController(_ cardController: CardController, willShow viewController: UIViewController)
 
@@ -99,13 +101,10 @@ optional func cardController(_ cardController: CardController, positionForDismis
 
 optional func cardController(_ cardController: CardController, animatorFor viewController: UIViewController) -> UIViewPropertyAnimator?
 ```
-Conforming to CardControllerDelegate lets you fine tune the position the animations for each view controller's view.
+
 
 ----
-Try out the demo app. ( screenshot bellow )
-
-
-
+screenshot of the demo app
 
 <p align="center">
    <img src="http://manuelcarlos.github.io/images/cards.gif" >
