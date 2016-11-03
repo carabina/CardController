@@ -38,7 +38,11 @@ class Home: Card{
         
     }
     
-    
+    override func didMove(toParentViewController parent: UIViewController?) {
+        
+      
+        cardController?.isMenuButtonHidden = false
+    }
     
     
   

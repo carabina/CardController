@@ -14,7 +14,7 @@ fileprivate extension CALayer {
         let copy: CABasicAnimation = animation.copy() as! CABasicAnimation
         
         if copy.fromValue == nil {
-            copy.fromValue = presentation()!.value(forKeyPath: copy.keyPath!)
+            copy.fromValue = presentation()?.value(forKeyPath: copy.keyPath!)
         }
         
         add(copy, forKey: copy.keyPath)

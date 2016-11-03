@@ -46,11 +46,31 @@ open class CardController: UIViewController {
     //MARK:- Public Properties
     public private (set) var viewControllers: [UIViewController]
     public private (set) var baseViewController: UIViewController
-    
     public var activeViewController: UIViewController? {return _activeViewController?.controller}
     
     
     public weak var delegate: CardControllerDelegate?
+    
+    
+    public var isMenuButtonHidden: Bool = false {
+        didSet {
+            view.setNeedsLayout()
+        }
+    }
+    
+    
+    
+    public lazy private (set) var menuButton: CardMenuButton = {
+        let button =  CardMenuButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(CardController.menuButtonTapped(_:)), for: .touchUpInside)
+        
+        return button
+    }()
+
+    
+    
+    
     
     
     //MARK:- Private Properties
@@ -80,15 +100,7 @@ open class CardController: UIViewController {
     
     
  
-    
-    public lazy private (set) var menuButton: CardMenuButton = {
-        let button =  CardMenuButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(CardController.menuButtonTapped(_:)), for: .touchUpInside)
-
-        return button
-    }()
-
+  
     
     
     
@@ -126,19 +138,21 @@ open class CardController: UIViewController {
 
     //MARK:- View life cycle
     
-    override open func viewDidLoad() {
+   open override  func viewDidLoad() {
         super.viewDidLoad()
     
         addViewControllers()
-        view.addSubview(menuButton)
-        updateViewConstraints()
+        
+        addMenuButton()
+        
+        
      
         
     }
     
     
     
-    override open func updateViewConstraints() {
+   open override  func updateViewConstraints() {
         let margins = view.layoutMarginsGuide
         let statuBarHidden = baseViewController.prefersStatusBarHidden
         let topInset: CGFloat = statuBarHidden ? 15 : 40
@@ -152,21 +166,21 @@ open class CardController: UIViewController {
     
  
     // Returning false lets UIKit know that this container view controller notifies its children of changes in its appearance
-    override open var shouldAutomaticallyForwardAppearanceMethods: Bool{  return false  }
+    open override  var shouldAutomaticallyForwardAppearanceMethods: Bool{  return false  }
     
     
     // Delegate the apperance of the status to the carController baseViewController.
-    override open var prefersStatusBarHidden: Bool{ return baseViewController.prefersStatusBarHidden }
+    open override  var prefersStatusBarHidden: Bool{ return baseViewController.prefersStatusBarHidden }
     
     
     
-    
+ 
     
     //MARK:-Public
     
 
     
-    public func present(_ vc:  UIViewController, with frame: CGRect = UIScreen.main.bounds ){
+    open func present(_ vc:  UIViewController, with frame: CGRect = UIScreen.main.bounds ){
         presentNew(vc, with: frame)
     }
     
@@ -175,7 +189,7 @@ open class CardController: UIViewController {
 
     
     
-   public  func popActiveViewController(){
+   open  func popActiveViewController(){
         animateAllToMenu()
     }
     
@@ -193,7 +207,13 @@ open class CardController: UIViewController {
     }
     
     
-    
+    private func addMenuButton(){
+        
+        if !isMenuButtonHidden{
+            view.addSubview(menuButton)
+            updateViewConstraints()
+        }
+    }
     
     
     private func addViewControllers(){
