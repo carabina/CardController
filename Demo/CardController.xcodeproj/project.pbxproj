@@ -26,9 +26,9 @@
 		64A4AE7F1DCA55DB00A464F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64A4AE821DCA55DB00A464F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64A4AE841DCA55DB00A464F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		64A4AE8B1DCA561600A464F2 /* CardControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardControllerDelegate.swift; path = Source/CardControllerDelegate.swift; sourceTree = "<group>"; };
-		64A4AE8C1DCA561600A464F2 /* CardMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardMenuButton.swift; path = Source/CardMenuButton.swift; sourceTree = "<group>"; };
-		64A4AE8D1DCA561600A464F2 /* CardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardController.swift; path = Source/CardController.swift; sourceTree = "<group>"; };
+		64A4AE8B1DCA561600A464F2 /* CardControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardControllerDelegate.swift; sourceTree = "<group>"; };
+		64A4AE8C1DCA561600A464F2 /* CardMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardMenuButton.swift; sourceTree = "<group>"; };
+		64A4AE8D1DCA561600A464F2 /* CardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
 		64A4AE911DCA562100A464F2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = "<group>"; };
 		64A4AE921DCA562100A464F2 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = Example/Contact.swift; sourceTree = "<group>"; };
 		64A4AE931DCA562100A464F2 /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = About.swift; path = Example/About.swift; sourceTree = "<group>"; };
@@ -68,14 +68,8 @@
 		64A4AE771DCA55DB00A464F2 /* CardController */ = {
 			isa = PBXGroup;
 			children = (
-				64A4AE911DCA562100A464F2 /* AppDelegate.swift */,
-				64A4AE961DCA562100A464F2 /* BaseViewController.swift */,
-				64A4AE921DCA562100A464F2 /* Contact.swift */,
-				64A4AE931DCA562100A464F2 /* About.swift */,
-				64A4AE941DCA562100A464F2 /* Work.swift */,
-				64A4AE951DCA562100A464F2 /* Home.swift */,
-				64A4AE971DCA562100A464F2 /* Card.swift */,
-				64A4AE8A1DCA560500A464F2 /* Source */,
+				64E9B3E91DCBC1420051826B /* Example */,
+				64A4AE8A1DCA560500A464F2 /* CardControllerSource */,
 				64A4AE7F1DCA55DB00A464F2 /* Assets.xcassets */,
 				64A4AE811DCA55DB00A464F2 /* LaunchScreen.storyboard */,
 				64A4AE841DCA55DB00A464F2 /* Info.plist */,
@@ -83,14 +77,29 @@
 			path = CardController;
 			sourceTree = "<group>";
 		};
-		64A4AE8A1DCA560500A464F2 /* Source */ = {
+		64A4AE8A1DCA560500A464F2 /* CardControllerSource */ = {
 			isa = PBXGroup;
 			children = (
 				64A4AE8B1DCA561600A464F2 /* CardControllerDelegate.swift */,
 				64A4AE8C1DCA561600A464F2 /* CardMenuButton.swift */,
 				64A4AE8D1DCA561600A464F2 /* CardController.swift */,
 			);
-			name = Source;
+			name = CardControllerSource;
+			path = ../../CarControllerSouce;
+			sourceTree = "<group>";
+		};
+		64E9B3E91DCBC1420051826B /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				64A4AE911DCA562100A464F2 /* AppDelegate.swift */,
+				64A4AE961DCA562100A464F2 /* BaseViewController.swift */,
+				64A4AE921DCA562100A464F2 /* Contact.swift */,
+				64A4AE931DCA562100A464F2 /* About.swift */,
+				64A4AE941DCA562100A464F2 /* Work.swift */,
+				64A4AE951DCA562100A464F2 /* Home.swift */,
+				64A4AE971DCA562100A464F2 /* Card.swift */,
+			);
+			name = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

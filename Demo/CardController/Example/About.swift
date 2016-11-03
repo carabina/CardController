@@ -22,9 +22,6 @@ class About: Card{
         view.addGestureRecognizer(tapRecognizer)
         
         
-        cardTitle.text = "About"
-        cardTitle.textColor = #colorLiteral(red: 1, green: 0.9019607843, blue: 0.5176470588, alpha: 1)
-        
     }
     
     
