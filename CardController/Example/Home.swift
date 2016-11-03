@@ -33,14 +33,12 @@ class Home: Card{
     
     
     func tap(_ gesture: UIGestureRecognizer){
-        cardController?.present(self)
+        cardController?.popActiveViewController()
     }
     
-    override func didMove(toParentViewController parent: UIViewController?) {
-        cardController?.isMenuButtonHidden = false
-    }
+ 
     
     
   
 
-}
+}//end

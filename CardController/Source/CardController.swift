@@ -43,12 +43,15 @@ open class CardController: UIViewController {
     public var activeViewController: UIViewController? {return _activeViewController?.controller}
     
     
+    /// The delegate of the card controller object.
     public weak var delegate: CardControllerDelegate?
     
     
     public var isMenuButtonHidden: Bool = false {
         didSet {
-            view.setNeedsLayout()
+            
+                view.setNeedsLayout()
+            
         }
     }
     
@@ -131,19 +134,24 @@ open class CardController: UIViewController {
         super.viewDidLoad()
     
         addViewControllers()
+    
         addMenuButton()
+    
+
     }
     
     
     
    open override  func updateViewConstraints() {
-        let margins = view.layoutMarginsGuide
-        let statuBarHidden = baseViewController.prefersStatusBarHidden
-        let topInset: CGFloat = statuBarHidden ? 15 : 40
-        menuButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: topInset ).isActive = true
-        menuButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 0).isActive = true
-        menuButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
-        
+    
+        if !isMenuButtonHidden{
+            let margins = view.layoutMarginsGuide
+            let statuBarHidden = baseViewController.prefersStatusBarHidden
+            let topInset: CGFloat = statuBarHidden ? 15 : 40
+            menuButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: topInset ).isActive = true
+            menuButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 0).isActive = true
+            menuButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
+        }
         super.updateViewConstraints()
     }
     
@@ -223,9 +231,23 @@ open class CardController: UIViewController {
     }
     
     
+    private static let defaultTimming: UITimingCurveProvider = {
+        
+        let mass: CGFloat = 0.003
+        let stiffness: CGFloat = 1.00
+        let damping: CGFloat =  0.08
+        let defaultSpring = UISpringTimingParameters(mass: mass, stiffness: stiffness, damping: damping, initialVelocity: .zero)
+       
+        return defaultSpring
+    }()
     
     
     
+    func defaultTimming2() -> UITimingCurveProvider{
+        return UISpringTimingParameters(mass: 1.0, stiffness: 1.0, damping: 1.0, initialVelocity: .zero)
+    }
+    
+   
     
     private func presentNew(_ viewController: UIViewController, with frame: CGRect ){
         guard baseViewController !== viewController else { return }
@@ -311,8 +333,13 @@ open class CardController: UIViewController {
     
     
    private func animator(for vc: UIViewController, to position: CGRect) -> UIViewPropertyAnimator{
-        
-        let animator = createAnimator(for: vc)
+    
+    if let  customAnimator = delegate?.cardController?(self, animatorFor: vc){
+                customAnimator.addAnimations {  vc.view.frame = position   }
+            return customAnimator
+        }
+    
+        let animator = createAnimator()
         animator.addAnimations {  vc.view.frame = position   }
         animator.addCompletion({_ in  })
         return animator
@@ -321,18 +348,30 @@ open class CardController: UIViewController {
     
     
     
-  private  func createAnimator(for vc: UIViewController ) -> UIViewPropertyAnimator{
+//  private  func createAnimator(for vc: UIViewController ) -> UIViewPropertyAnimator{
+//        
+//        let mass: CGFloat = 0.003
+//        let stiffness: CGFloat = 1.00
+//        let damping: CGFloat =  0.08
+//        let defaultSpring = UISpringTimingParameters(mass: mass, stiffness: stiffness, damping: damping, initialVelocity: .zero)
+//        let defaultDuration = TimeInterval(1)
+//    
+//        let animator = UIViewPropertyAnimator(duration: defaultDuration, timingParameters: defaultSpring)
+//        animator.isUserInteractionEnabled = false
+//        return animator
+//    }
+
+    
+    
+    private  func createAnimator(with duration: TimeInterval = TimeInterval(1),
+                                 timingParameters parameters: UITimingCurveProvider = defaultTimming ) -> UIViewPropertyAnimator{
         
-        let mass: CGFloat = 0.19
-        let stiffness: CGFloat = 15.5
-        let damping =  2.6 * sqrt(mass * stiffness)
-        let underDamped = 0.5 * damping
-        let springParameters = UISpringTimingParameters(mass: mass, stiffness: stiffness, damping: underDamped, initialVelocity: .zero)
-        let animator = UIViewPropertyAnimator(duration: 1, timingParameters: springParameters)
+    
+        
+        let animator = UIViewPropertyAnimator(duration: duration, timingParameters: parameters)
         animator.isUserInteractionEnabled = false
         return animator
     }
-    
     
     
     

@@ -33,6 +33,7 @@ class Card: UIViewController {
         view.layer.shadowOffset = CGSize(width: 0, height: 0)
         
         view.addSubview(cardTitle)
+        updateViewConstraints()
         
     }
     

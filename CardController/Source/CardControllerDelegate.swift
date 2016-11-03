@@ -36,12 +36,20 @@ import UIKit
     ///
     /// - Parameters:
     ///   - cardController: The cardController that is moving the view.
-    ///   - viewController: The view controller whose view we want to position.
+    ///   - viewController: The view controller's view we want to position.
     /// - Returns: The point where the view should animate to when the view controller gets dismissed.
     @objc optional func cardController(_ cardController: CardController, positionForDismissed viewController: UIViewController) -> CGPoint
     
     
     
+    /// Use this method to return a custom animator object that will replace the default animation for the view controller.
+    ///
+    /// - Parameters:
+    ///   - cardController: The cardController that is moving the view.
+    ///   - viewController: The view controller's view which the animator will act upon.
+    /// - Returns: The new animator object that replaces the default animation for this view controller.
+    @objc optional func cardController(_ cardController: CardController, animatorFor viewController: UIViewController) -> UIViewPropertyAnimator?
+
     
     
-}
+}//End
