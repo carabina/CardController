@@ -50,7 +50,7 @@ From anywhere inside your view controllers you can:
 cardController?.popActiveViewController()
 ```
 
-#### Configuring a Menu Button’s Appearance
+#### Customize the Menu Button’s Appearance
 
 For example, in one of your view controllers:
 ```swift
@@ -63,6 +63,21 @@ override func didMove(toParentViewController parent: UIViewController?) {
 }
 
 ```
+#### Customize the animation of a specific view controller.
+Adopt the ```CardControllerDelegate``` and implement this delegate method returning your custom animator object.
+
+```swift
+func cardController(_ cardController: CardController, animatorFor viewController: UIViewController) -> UIViewPropertyAnimator? {
+
+    if viewController is AboutViewController{
+        let timming: UITimingCurveProvider = UICubicTimingParameters(animationCurve: .easeInOut)
+        let homeAnimator = UIViewPropertyAnimator(duration: TimeInterval(1), timingParameters: timming)
+        return homeAnimator
+    }
+    return nil
+}
+```
+
 
 #### Customize the System Status Bar
 

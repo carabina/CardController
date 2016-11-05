@@ -67,16 +67,16 @@ class Contact: Card, CardControllerDelegate{
     // PLEASE UNCOMENT THIS METHOD TO TRY A DIFERENT ANIMATION.
     
     // This delegate method lets us specify a custom animator object to that will animate the view controller's view into position.
-//    func cardController(_ cardController: CardController, animatorFor viewController: UIViewController) -> UIViewPropertyAnimator? {
-//       
-//        if viewController is About{
-//            let timming: UITimingCurveProvider = UICubicTimingParameters(animationCurve: .easeInOut)
-//            let homeAnimator = UIViewPropertyAnimator(duration: TimeInterval(1), timingParameters: timming)
-//            
-//            return homeAnimator
-//        }
-//            return nil
-//    }
+    func cardController(_ cardController: CardController, animatorFor viewController: UIViewController) -> UIViewPropertyAnimator? {
+       
+        if viewController is About{
+            let timming: UITimingCurveProvider = UICubicTimingParameters(animationCurve: .easeInOut)
+            let homeAnimator = UIViewPropertyAnimator(duration: TimeInterval(1), timingParameters: timming)
+            
+            return homeAnimator
+        }
+            return nil
+    }
 
     
 }//End
