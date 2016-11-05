@@ -89,9 +89,6 @@ func present( _ vc:  UIViewController )
 func present( _ vc:  UIViewController, with frame: CGRect )
 func popActiveViewController()
 
-
-
-
 ```
 
 #### CardMenuButtom
