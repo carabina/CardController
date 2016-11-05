@@ -24,8 +24,8 @@ open class CardMenuButton : UIButton {
     
    private let shortLines: CGPath = {
         let path = CGMutablePath()
-        path.move(to: CGPoint(x: 2, y: 2))
-        path.addLine(to: CGPoint(x: 28, y:2))
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addLine(to: CGPoint(x: 30, y:0))
 
         return path
     }()
@@ -48,6 +48,24 @@ open class CardMenuButton : UIButton {
         }
     }
     
+    
+    
+    public var lineWidth: CGFloat = 3{
+        willSet{
+            top.lineWidth = newValue
+            middle.lineWidth = newValue
+            bottom.lineWidth = newValue
+        }
+    }
+    
+    
+    public var lineCap: String = kCALineCapSquare{
+        willSet{
+            top.lineCap = newValue
+            middle.lineCap = newValue
+            bottom.lineCap = newValue
+        }
+    }
     
     
     
@@ -107,24 +125,22 @@ open class CardMenuButton : UIButton {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         
         top.path = shortLines
         middle.path = shortLines
         bottom.path = shortLines
 
+        
         for stroke in [ top, middle, bottom ] {
             stroke.strokeColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1).cgColor
-            stroke.lineWidth = 4
-            stroke.miterLimit = 4
-            stroke.lineCap = kCALineCapRound
-
-            let strokingPath = CGPath(__byStroking: stroke.path!, transform: nil, lineWidth: 4, lineCap: .round, lineJoin: .miter, miterLimit: 4)
-
-            stroke.bounds = (strokingPath?.boundingBoxOfPath)!
+            stroke.lineWidth = lineWidth
+            stroke.lineCap = lineCap
+            stroke.bounds = (stroke.path?.boundingBoxOfPath)!
+            
             layer.addSublayer(stroke)
         }
 

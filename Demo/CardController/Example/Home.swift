@@ -1,10 +1,4 @@
-//
-//  D.swift
-//  ContainerControllerCustomTransition
-//
-//  Created by Manuel Lopes on 02/11/2016.
-//  Copyright © 2016 Manuel Carlos. All rights reserved.
-//
+
 
 import UIKit
 
@@ -33,7 +27,8 @@ class Home: Card{
     
     
     func tap(_ gesture: UIGestureRecognizer){
-        cardController?.popActiveViewController()
+        cardController?.present(self, with: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: 200 ) )
+       
     }
     
  

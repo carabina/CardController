@@ -1,8 +1,3 @@
-//
-//  SecondaryViewController.swift
-//  ContainerControllerCustomTransition
-//
-//  Created by Manuel Lopes on 30/07/2016.
 
 
 import UIKit

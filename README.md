@@ -50,11 +50,7 @@ From anywhere inside your view controllers you can:
 cardController?.popActiveViewController()
 ```
 
-#### Customize the Menu button
-Your can change this properties :
-- Background color
-- tint color
-- show / hide
+#### Configuring a Menu Button’s Appearance
 
 For example, in one of your view controllers:
 ```swift
@@ -63,7 +59,9 @@ override func didMove(toParentViewController parent: UIViewController?) {
     cardController?.menuButton.tintColor = .black
     cardController?.menuButton.backgroundColor = .white
     cardController?.isMenuButtonHidden = false
+    cardController?.menuButton.lineWidth = 6
 }
+
 ```
 
 #### Customize the System Status Bar
@@ -73,32 +71,45 @@ override func didMove(toParentViewController parent: UIViewController?) {
 
 ## API
 
-#### Public Properties
+#### CardController
 
 ```swift
+init()
+init( base: UIViewController, viewControllers: [UIViewController] )
+init( viewControllers: [UIViewController] )
 
-public var viewControllers: [UIViewController] {get}
-public var baseViewController: UIViewController {get}
-public var activeViewController: UIViewController? {get}
-public var delegate: CardControllerDelegate? {get set}
-public var isMenuButtonHidden: Bool = false {get set}
+var activeViewController: UIViewController? {get}
+var baseViewController:   UIViewController {get}
+var viewControllers:      [UIViewController] {get}
+var delegate: CardControllerDelegate? {get set}
+var isMenuButtonHidden: Bool {get set}
+var menuButton: CardMenuButton {get}
+
+func present( _ vc:  UIViewController )
+func present( _ vc:  UIViewController, with frame: CGRect )
+func popActiveViewController()
+
+
+
 
 ```
 
+#### CardMenuButtom
 
+```swift
+var tintColor: UIColor {get set}
+var lineWidth: CGFloat {get set}
+var lineCap: String {get set}
+var showsMenu: Bool {get set}
 
+```
 
 #### CardControllerDelegate
 
-Conforming to CardControllerDelegate lets you fine tune the position the animations for each view controller's view.
-
 ```swift
 optional func cardController(_ cardController: CardController, willShow viewController: UIViewController)
-
 optional func cardController(_ cardController: CardController, didShow  viewController: UIViewController)
-
 optional func cardController(_ cardController: CardController, positionForDismissed viewController: UIViewController) -> CGPoint
-
 optional func cardController(_ cardController: CardController, animatorFor viewController: UIViewController) -> UIViewPropertyAnimator?
 ```
 

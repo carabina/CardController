@@ -31,39 +31,6 @@ public extension UIViewController{
 open class CardController: UIViewController {
     
     
-    //MARK:- Public Properties
-    public private (set) var viewControllers: [UIViewController]
-    public private (set) var baseViewController: UIViewController
-    public var activeViewController: UIViewController? {return _activeViewController?.controller}
-    
-    
-    /// The delegate of the card controller object.
-    public weak var delegate: CardControllerDelegate?
-    
-    
-    public var isMenuButtonHidden: Bool = false {
-        didSet {
-            
-                view.setNeedsLayout()
-            
-        }
-    }
-    
-    
-    
-    public lazy private (set) var menuButton: CardMenuButton = {
-        let button =  CardMenuButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(CardController.menuButtonTapped(_:)), for: .touchUpInside)
-        
-        return button
-    }()
-
-    
-    
-    
-    
-    
     //MARK:- Private Properties
     private enum Where{
         case toMenu, out
@@ -90,11 +57,40 @@ open class CardController: UIViewController {
 
     
     
+    //MARK:- Public Properties
+    public private (set) var viewControllers: [UIViewController]
+    public private (set) var baseViewController: UIViewController
+    public var activeViewController: UIViewController? {return _activeViewController?.controller}
+    
+    
+    /// The delegate of the card controller object.
+    public weak var delegate: CardControllerDelegate?
+    
+    
+    public var isMenuButtonHidden: Bool = false {
+        didSet {
+            view.setNeedsLayout()
+        }
+    }
+    
+    
+    
+    public lazy private (set) var menuButton: CardMenuButton = {
+        let button =  CardMenuButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(CardController.menuButtonTapped(_:)), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    
+    
+    //MARK:- Init
     convenience init(base: UIViewController, viewControllers: [UIViewController] ){
         self.init(nibName: nil, bundle: nil, base: base, viewControllers: viewControllers)
     }
     
-    //MARK:- Init
+  
     convenience init(viewControllers: [UIViewController] = [] ){
         let whitevc = UIViewController()
         whitevc.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -157,7 +153,7 @@ open class CardController: UIViewController {
     
  
     
-    //MARK:-Public
+    //MARK:- Public Methods
     
 
     
@@ -247,8 +243,6 @@ open class CardController: UIViewController {
         animate(viewController: (viewController, 0, frame), to: frame.origin) {
             self.delegate?.cardController?(self, didShow: viewController)
         }
-        
-        
     }
     
     
@@ -308,8 +302,6 @@ open class CardController: UIViewController {
             toMenu.addCompletion({_ in  completion?() })
             toMenu.startAnimation()
         }
-        
-        
     }
 
     
@@ -330,25 +322,9 @@ open class CardController: UIViewController {
     
     
     
-//  private  func createAnimator(for vc: UIViewController ) -> UIViewPropertyAnimator{
-//        
-//        let mass: CGFloat = 0.003
-//        let stiffness: CGFloat = 1.00
-//        let damping: CGFloat =  0.08
-//        let defaultSpring = UISpringTimingParameters(mass: mass, stiffness: stiffness, damping: damping, initialVelocity: .zero)
-//        let defaultDuration = TimeInterval(1)
-//    
-//        let animator = UIViewPropertyAnimator(duration: defaultDuration, timingParameters: defaultSpring)
-//        animator.isUserInteractionEnabled = false
-//        return animator
-//    }
-
-    
     
     private  func createAnimator(with duration: TimeInterval = TimeInterval(1),
                                  timingParameters parameters: UITimingCurveProvider = defaultTimming ) -> UIViewPropertyAnimator{
-        
-    
         
         let animator = UIViewPropertyAnimator(duration: duration, timingParameters: parameters)
         animator.isUserInteractionEnabled = false

@@ -1,8 +1,5 @@
-//
-//  AppDelegate.swift
-//  ContainerControllerCustomTransition
-//
-//  Created by Manuel Lopes on 30/07/2016.
+
+//  Created by Manuel Lopes on 31/10/2016.
 
 
 import UIKit

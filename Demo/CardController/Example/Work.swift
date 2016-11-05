@@ -1,10 +1,4 @@
-//
-//  C.swift
-//  ContainerControllerCustomTransition
-//
-//  Created by Manuel Lopes on 31/10/2016.
-//  Copyright © 2016 Manuel Carlos. All rights reserved.
-//
+
 
 import UIKit
 

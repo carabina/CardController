@@ -1,10 +1,4 @@
-//
-//  B.swift
-//  ContainerControllerCustomTransition
-//
-//  Created by Manuel Lopes on 31/10/2016.
-//  Copyright © 2016 Manuel Carlos. All rights reserved.
-//
+
 
 import UIKit
 
@@ -21,7 +15,8 @@ class About: Card{
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(About.tap(_:)))
         view.addGestureRecognizer(tapRecognizer)
         
-        
+        cardTitle.text = "About"
+        cardTitle.textColor = #colorLiteral(red: 0.3882352941, green: 0.2588235294, blue: 0.4196078431, alpha: 1)
     }
     
     

@@ -1,10 +1,4 @@
-//
-//  A.swift
-//  ContainerControllerCustomTransition
-//
-//  Created by Manuel Lopes on 31/10/2016.
-//  Copyright © 2016 Manuel Carlos. All rights reserved.
-//
+
 
 import UIKit
 
@@ -62,11 +56,9 @@ class Contact: Card, CardControllerDelegate{
     func cardController(_ cardController: CardController, positionForDismissed viewController: UIViewController) -> CGPoint {
         
         if viewController is About{
-            return CGPoint(x:  -500, y: 210)
+            return CGPoint(x:  -300, y: 210)
         }
-        
         return CGPoint(x: 400, y: viewController.view.frame.origin.y)
-        
     }
     
     
