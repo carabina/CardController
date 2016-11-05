@@ -52,28 +52,30 @@ class Contact: Card, CardControllerDelegate{
     }
     
     
+    // PLEASE UNCOMENT THIS METHOD TO animate the view to a custom position.
+    
     // This delegate method lets us specify a diferent position where the view controller should be dismissed
-    func cardController(_ cardController: CardController, positionForDismissed viewController: UIViewController) -> CGPoint {
-        
-        if viewController is About{
-            return CGPoint(x:  -300, y: 210)
-        }
-        return CGPoint(x: 400, y: viewController.view.frame.origin.y)
-    }
+//    func cardController(_ cardController: CardController, positionForDismissed viewController: UIViewController) -> CGPoint {
+//        
+//        if viewController is About{
+//            return CGPoint(x:  -300, y: 210)
+//        }
+//        return CGPoint(x: 400, y: viewController.view.frame.origin.y)
+//    }
     
     
+    // PLEASE UNCOMENT THIS METHOD TO TRY A DIFERENT ANIMATION.
     
     // This delegate method lets us specify a custom animator object to that will animate the view controller's view into position.
 //    func cardController(_ cardController: CardController, animatorFor viewController: UIViewController) -> UIViewPropertyAnimator? {
+//       
 //        if viewController is About{
-//            
 //            let timming: UITimingCurveProvider = UICubicTimingParameters(animationCurve: .easeInOut)
 //            let homeAnimator = UIViewPropertyAnimator(duration: TimeInterval(1), timingParameters: timming)
 //            
 //            return homeAnimator
 //        }
 //            return nil
-//        
 //    }
 
     

@@ -50,6 +50,7 @@ open class CardMenuButton : UIButton {
     
     
     
+    /// The line width of the strokes
     public var lineWidth: CGFloat = 3{
         willSet{
             top.lineWidth = newValue
@@ -59,6 +60,7 @@ open class CardMenuButton : UIButton {
     }
     
     
+    /// The kind of line cap
     public var lineCap: String = kCALineCapSquare{
         willSet{
             top.lineCap = newValue

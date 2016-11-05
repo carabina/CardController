@@ -7,7 +7,6 @@ class Card: UIViewController {
     
     
     let cardTitle: UILabel = {
-        
         let label = UILabel()
         label.numberOfLines = 0 // set to 0 to force to display untruncated text.
         label.textAlignment = .natural
@@ -28,6 +27,7 @@ class Card: UIViewController {
         view.layer.shadowOffset = CGSize(width: 0, height: 0)
         
         view.addSubview(cardTitle)
+        
         updateViewConstraints()
         
     }

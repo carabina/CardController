@@ -254,19 +254,15 @@ open class CardController: UIViewController {
     private func  moveInactiveViewControllers( _ to: Where){
         
         let inactiveVC: [ControllerInfo] = listControllersToAnimateOut(except: (_activeViewController?.controller)!  )
+
         switch to {
         case .toMenu:
-            inactiveVC.forEach({
-                
-                self.animate(viewController: $0, to: $0.area.origin    )
-                
-                 })
+            inactiveVC.forEach({  self.animate(viewController: $0, to: $0.area.origin)  })
         case .out:
             inactiveVC.forEach({
                 let position = self.delegate?.cardController?(self, positionForDismissed: $0.controller)
-                let defaultPoint = CGPoint(x: 400, y: $0.area.origin.y)
+                let defaultPoint = CGPoint(x: UIScreen.main.bounds.width, y: $0.area.origin.y)
                 self.animate(viewController: $0, to: position ?? defaultPoint  )
-            
             })
         }
     }
@@ -363,18 +359,8 @@ open class CardController: UIViewController {
 
 
     private func listControllersToAnimateOut( except minus: UIViewController? = nil) -> [ControllerInfo]{
-    
-        var controllers: [ControllerInfo] = []
-            for (i, value ) in controllersInfo.enumerated(){
-                if value.controller !== minus{
-                    controllers.append( (value.controller, i, value.area) )
-                }
-            }
-        
-        return controllers
+        return controllersInfo.filter({ ( vc, _, _ ) in vc !== minus  })
     }
-    
-    
     
   
     

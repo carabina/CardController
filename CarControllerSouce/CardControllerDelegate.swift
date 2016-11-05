@@ -39,7 +39,7 @@ import UIKit
     
     
     
-    /// Use this method to return a custom animator object that will replace the default animation for the view controller.
+    /// Use this method to return a custom animator object that will replace the default animation for the specified view controller.
     ///
     /// - Parameters:
     ///   - cardController: The cardController that is moving the view.
