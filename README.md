@@ -64,7 +64,7 @@ override func didMove(toParentViewController parent: UIViewController?) {
 
 ```
 #### Customize the animation of a specific view controller.
-Adopt the ```CardControllerDelegate``` and implement this delegate method returning your custom animator object.
+Adopt the ```CardControllerDelegate``` protocol and implement this delegate method, returning your custom animator object.
 
 ```swift
 func cardController(_ cardController: CardController, animatorFor viewController: UIViewController) -> UIViewPropertyAnimator? {
