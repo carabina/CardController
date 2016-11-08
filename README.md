@@ -15,20 +15,21 @@
 
 ## Instalation
 
-### Manually
-Please add the CardControllerSource folder to your project.
+To install with [CocoaPods](http://cocoapods.org), add the following line to your Podfile:
 
-(CocoaPods support coming soon)
-
-
+```ruby
+pod "CardController"
+```
 
 
 ## Usage
 
- Create the custom view controllers that you'll want to add.
- Initialize a CardController object with a base view controller and the array of view controllers that you'll want to manage.
+ 1. Create the custom view controllers that you'll want to add.
+ 2. Initialize a CardController object with a base view controller and an array of view controllers that you'll want to manage.
 
 ```swift
+import CardController
+//  ...
 let base  = BaseViewController()
 let about = About()
 let work  = Work()
