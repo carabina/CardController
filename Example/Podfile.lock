@@ -1,0 +1,16 @@
+PODS:
+  - CardController (0.1.0)
+
+DEPENDENCIES:
+  - CardController (from `../`)
+
+EXTERNAL SOURCES:
+  CardController:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CardController: 95c9c1dee6275006696a619b4914e49ded98e665
+
+PODFILE CHECKSUM: 730c0845905ad914f7d4cccd712e91dec3db280b
+
+COCOAPODS: 1.0.0.beta.6

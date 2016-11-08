@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CardController_Example' do
+  pod 'CardController', :path => '../'
+
+  target 'CardController_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
